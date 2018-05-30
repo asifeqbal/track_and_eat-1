@@ -4,5 +4,17 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
     },
-    "displayName": "Track And Eat"
+    "displayName": "Track And Eat",
+    "dependencies": {
+        "cordova-plugin-network-information": "^2.0.1",
+        "cordova-plugin-splashscreen": "^4.1.0",
+        "cordova-plugin-whitelist": "^1.3.3"
+    },
+    "cordova": {
+        "plugins": {
+            "cordova-plugin-splashscreen": {},
+            "cordova-plugin-network-information": {},
+            "cordova-plugin-whitelist": {}
+        }
+    }
 }
