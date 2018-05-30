@@ -6,6 +6,7 @@
     },
     "displayName": "Track And Eat",
     "dependencies": {
+        "cordova-android": "^7.0.0",
         "cordova-plugin-network-information": "^2.0.1",
         "cordova-plugin-splashscreen": "^4.1.0",
         "cordova-plugin-whitelist": "^1.3.3"
