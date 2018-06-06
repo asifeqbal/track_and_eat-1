@@ -8,21 +8,20 @@
         PhoneGap Team
     </author>
     <content src="index.html" />
-     <preference name="DisallowOverscroll" value="true" />
+    <preference name="DisallowOverscroll" value="true" />
     <preference name="android-minSdkVersion" value="14" />
     <preference name="fullscreen" value="false" />
     <preference name="SplashScreenDelay" value="10000" />
     <preference name="SplashScreen" value="splash" />
-	<preference name="ShowSplashScreenSpinner" value="false" />
+    <preference name="ShowSplashScreenSpinner" value="false" />
     <preference name="orientation" value="portrait" />
     <preference name="target-device" value="universal" />
     <preference name="StatusBarOverlaysWebView" value="false" />
     <preference name="StatusBarBackgroundColor" value="#ee6e73" />
-	<preference name="StatusBarStyle" value="blacktranslucent" />
+    <preference name="StatusBarStyle" value="blacktranslucent" />
     <plugin name="phonegap-plugin-push" source="npm" spec="~1.8.0">
         <variable name="SENDER_ID" value="XXXXXXX" />
     </plugin>
-	
     <platform name="android">
         <icon src="icon.png" />
         <icon density="ldpi" platform="android" src="res/icon/android/icon-36-ldpi.png" />
@@ -33,8 +32,7 @@
         <splash density="mdpi" platform="android" src="res/screen/android/screen-mdpi-portrait.png" />
         <splash density="hdpi" platform="android" src="res/screen/android/screen-hdpi-portrait.png" />
         <splash density="xhdpi" platform="android" src="res/screen/android/screen-xhdpi-portrait.png" />
-	</platform>   
-    
+    </platform>
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
@@ -45,8 +43,8 @@
     <platform name="android">
         <allow-intent href="market:*" />
     </platform>
-   
     <plugin name="cordova-plugin-splashscreen" spec="^4.1.0" />
     <plugin name="cordova-plugin-network-information" spec="^2.0.1" />
     <plugin name="cordova-plugin-whitelist" spec="^1.3.3" />
+    <plugin name="cordova-plugin-camera" spec="^4.0.3" />
 </widget>

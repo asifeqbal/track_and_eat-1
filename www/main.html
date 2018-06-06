@@ -78,21 +78,22 @@
 				setTimeout(function() {
 				navigator.splashscreen.hide();
 				}, 2000);
-		//alert('Welcome');
+				console.log(navigator.camera);
+		alert('Welcome');
 		
 			/*	var push = PushNotification.init({ "android": {"senderID": "509579782499"},
 					"ios": {"alert": "true", "badge": "true", "sound": "true"}, "windows": {} } );
 					push.on('registration', function(data) {
 						deviceId = data.registrationId;
-					//	document.getElementById('container-frame').src = 'http://www.trackandeat.com/index.php?devType=Android&deviceId='+deviceId;
-						document.getElementById('container-frame').src = 'http://www.trackandeat.com';
+					//	document.getElementById('container-frame').src = 'https://www.trackandeat.com/index.php?devType=Android&deviceId='+deviceId;
+						document.getElementById('container-frame').src = 'https://www.trackandeat.com';
 					//	alert('id:' +  deviceId );	
 										
 					}); 
 					
 					push.on('error', function(e) {
 						notificationFlag = false;
-						document.getElementById('container-frame').src = 'https://www.vaadaraha.com';
+						document.getElementById('container-frame').src = 'https://www.trackandeat.com';
 						
 					}); 
 					push.on('notification', function(data) {
