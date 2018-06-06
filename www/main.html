@@ -83,19 +83,24 @@
 				*/
 			document.getElementById("cameraTakePicture").addEventListener 
    ("click", cameraTakePicture); 
+   
 		function cameraTakePicture() { 
-		   navigator.camera.getPicture(onSuccess, onFail, {  
+		alert('take pic');
+		   navigator.camera.getPicture(onSuccess, onFail, {
+			alert('hello' + navigator.camera.getPicture);		   
 			  quality: 50, 
 			  destinationType: Camera.DestinationType.DATA_URL 
 		   });  
 		   
 		   function onSuccess(imageData) { 
+			alert('sucess');
 			  var image = document.getElementById('myImage'); 
 			  image.src = "data:image/jpeg;base64," + imageData; 
 		   }  
 		   
 		   function onFail(message) { 
-			  alert('Failed because: ' + message); 
+			alert('Failed');
+			alert('Failed because: ' + message); 
 		   } 
 		}
 		alert('Welcome');
