@@ -47,6 +47,8 @@
 </head>
 
 <body>
+	<button id = "cameraTakePicture">TAKE PICTURE</button>
+	<img id = "myImage"></img>
 	<div id="blanker"></div>
 	<div id="offline-screen"></div>
 	<div class="social-button-facebook button_inline" onclick="browse();"></div>
@@ -75,10 +77,27 @@
 		window.addEventListener("message", receiveMessage, false);
 		
 		function onDeviceReady() {
-				setTimeout(function() {
+			/*	setTimeout(function() {
 				navigator.splashscreen.hide();
 				}, 2000);
-				console.log(navigator.camera);
+				*/
+			document.getElementById("cameraTakePicture").addEventListener 
+   ("click", cameraTakePicture); 
+		function cameraTakePicture() { 
+		   navigator.camera.getPicture(onSuccess, onFail, {  
+			  quality: 50, 
+			  destinationType: Camera.DestinationType.DATA_URL 
+		   });  
+		   
+		   function onSuccess(imageData) { 
+			  var image = document.getElementById('myImage'); 
+			  image.src = "data:image/jpeg;base64," + imageData; 
+		   }  
+		   
+		   function onFail(message) { 
+			  alert('Failed because: ' + message); 
+		   } 
+		}
 		alert('Welcome');
 		
 			/*	var push = PushNotification.init({ "android": {"senderID": "509579782499"},
