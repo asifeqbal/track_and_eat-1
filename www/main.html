@@ -47,7 +47,7 @@
 </head>
 
 <body>
-	<button id = "cameraTakePicture">TAKE PICTURE</button>
+	<button id = "cameraTakePicture" onclick="cameraTakePicture()">TAKE PICTURE</button>
 	<img id = "myImage"></img>
 	<div id="blanker"></div>
 	<div id="offline-screen"></div>
@@ -77,7 +77,7 @@
 		window.addEventListener("message", receiveMessage, false);
 		
 		function cameraTakePicture() { 
-		alert('baal');
+		alert('camera');
 		alert('camera:' + navigator.camera);
 		alert('camera:' + navigator.camera.getPicture);
 					   navigator.camera.getPicture(onSuccess, onFail, {  
@@ -89,6 +89,7 @@
 					   alert('sucess');
 						  var image = document.getElementById('myImage'); 
 						  image.src = "data:image/jpeg;base64," + imageData; 
+						  document.getElementById('container-frame').src = 'https://www.trackandeat.com';
 					   }  
 					   
 					   function onFail(message) { 
@@ -102,7 +103,7 @@
 				navigator.splashscreen.hide();
 				}, 2000);
 				*/
-			cameraTakePicture();
+			
    
 		
 		alert('Welcome');
