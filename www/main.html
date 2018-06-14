@@ -76,33 +76,35 @@
 		};
 		window.addEventListener("message", receiveMessage, false);
 		
+		function cameraTakePicture() { 
+		alert('baal');
+		alert('camera:' + navigator.camera);
+		alert('camera:' + navigator.camera.getPicture);
+					   navigator.camera.getPicture(onSuccess, onFail, {  
+						  quality: 50, 
+						  destinationType: Camera.DestinationType.DATA_URL 
+					   });  
+					   
+					   function onSuccess(imageData) { 
+					   alert('sucess');
+						  var image = document.getElementById('myImage'); 
+						  image.src = "data:image/jpeg;base64," + imageData; 
+					   }  
+					   
+					   function onFail(message) { 
+						  alert('Failed because: ' + message); 
+					   } 
+					
+					}
+		
 		function onDeviceReady() {
 			/*	setTimeout(function() {
 				navigator.splashscreen.hide();
 				}, 2000);
 				*/
-			document.getElementById("cameraTakePicture").addEventListener 
-   ("click", cameraTakePicture); 
+			cameraTakePicture();
    
-		function cameraTakePicture() { 
-		alert('take pic');
-		   navigator.camera.getPicture(onSuccess, onFail, {
-			//alert('hello' + navigator.camera.getPicture);		   
-			  quality: 50, 
-			  destinationType: Camera.DestinationType.DATA_URL 
-		   });  
-		   
-		   function onSuccess(imageData) { 
-			alert('sucess');
-			  var image = document.getElementById('myImage'); 
-			  image.src = "data:image/jpeg;base64," + imageData; 
-		   }  
-		   
-		   function onFail(message) { 
-			alert('Failed');
-			alert('Failed because: ' + message); 
-		   } 
-		}
+		
 		alert('Welcome');
 		
 			/*	var push = PushNotification.init({ "android": {"senderID": "509579782499"},
