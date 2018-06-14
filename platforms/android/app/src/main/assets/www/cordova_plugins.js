@@ -36,7 +36,7 @@ module.exports = [
 module.exports.metadata = 
 // TOP OF METADATA
 {
-  "cordova-plugin-camera": "4.0.3"
+  "cordova-plugin-camera": "2.4.1"
 };
 // BOTTOM OF METADATA
 });
