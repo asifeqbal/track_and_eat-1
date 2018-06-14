@@ -47,7 +47,6 @@
 </head>
 
 <body>
-	<img id="camera" width="352" height="288" />
 	<button id = "cameraTakePicture" onclick="cameraTakePicture()">TAKE PICTURE</button>
 	<img id = "myImage"></img>
 	<div id="blanker"></div>
@@ -56,7 +55,6 @@
 	
 	<iframe src="https://www.trackandeat.com" name="container-frame" id="container-frame" onload="loaded();" seamless="seamless" width="100%" height="100%" style="border:none; position:absolute;"></iframe>
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-    <script type="text/javascript" charset="utf-8" src="CanvasCamera.js"></script>
     <script type="text/javascript" charset="utf-8" src="js/index.js"></script>
     <script type="text/javascript" charset="utf-8" >
 	
@@ -106,12 +104,7 @@
 				navigator.splashscreen.hide();
 				}, 2000);
 				*/
-			
-		CanvasCamera.start();
-		CanvasCamera.capture = function(data) {
-		document.getElementById('camera').src = data;
-		}
-		
+
 		alert('Welcome');
 		
 			/*	var push = PushNotification.init({ "android": {"senderID": "509579782499"},
