@@ -46,9 +46,7 @@
     
 </head>
 
-<body>
-	<button id = "cameraTakePicture" onclick="cameraTakePicture()">TAKE PICTURE</button>
-	<img id = "myImage"></img>
+<body>	
 	<div id="blanker"></div>
 	<div id="offline-screen"></div>
 	<div class="social-button-facebook button_inline" onclick="browse();"></div>
@@ -74,39 +72,16 @@
 					break;
 			}
 		};
-		window.addEventListener("message", receiveMessage, false);
+		window.addEventListener("message", receiveMessage, false);		
 		
-		function cameraTakePicture() { 
-		alert('camera');
-		alert('camera:' + navigator.camera);
-		alert('camera:' + navigator.camera.getPicture);
-					   navigator.camera.getPicture(onSuccess, onFail, {  
-						  quality: 50, 
-						  destinationType: Camera.DestinationType.DATA_URL 
-					   });  
-					   
-					   function onSuccess(imageData) { 
-					   alert('sucess');
-						  var image = document.getElementById('myImage'); 
-						  image.src = "data:image/jpeg;base64," + imageData; 
-						  document.getElementById('container-frame').src = 'https://www.trackandeat.com';
-					   }  
-					   
-					   function onFail(message) { 
-						  alert('Failed because: ' + message); 
-					   } 
-					
-					}
 		
 		function onDeviceReady() {
 			/*	setTimeout(function() {
 				navigator.splashscreen.hide();
 				}, 2000);
 				*/
-			
-   
 		
-		alert('Welcome');
+		
 		
 			/*	var push = PushNotification.init({ "android": {"senderID": "509579782499"},
 					"ios": {"alert": "true", "badge": "true", "sound": "true"}, "windows": {} } );
