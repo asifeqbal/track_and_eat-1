@@ -7,19 +7,46 @@
     "files": {
       "res/xml/config.xml": {
         "parents": {
-          "/*": []
+          "/*": [
+            {
+              "xml": "<feature name=\"Printer\"><param name=\"android-package\" value=\"de.appplant.cordova.plugin.printer.Printer\" /></feature>",
+              "count": 1
+            }
+          ]
         }
       },
       "AndroidManifest.xml": {
         "parents": {
           "/*": [],
-          "application": []
+          "application": [],
+          "/manifest/application": [
+            {
+              "xml": "<activity android:exported=\"false\" android:label=\"Printer\" android:name=\"de.appplant.cordova.plugin.printer.ui.SelectPrinterActivity\"></activity>",
+              "count": 1
+            }
+          ]
         }
       }
     }
   },
-  "installed_plugins": {},
+  "installed_plugins": {
+    "cordova-plugin-printer": {
+      "PACKAGE_NAME": "com.trackandeat.app"
+    }
+  },
   "dependent_plugins": {},
-  "modules": [],
-  "plugin_metadata": {}
+  "modules": [
+    {
+      "id": "cordova-plugin-printer.Printer",
+      "file": "plugins/cordova-plugin-printer/www/printer.js",
+      "pluginId": "cordova-plugin-printer",
+      "clobbers": [
+        "plugin.printer",
+        "cordova.plugins.printer"
+      ]
+    }
+  ],
+  "plugin_metadata": {
+    "cordova-plugin-printer": "0.7.3"
+  }
 }

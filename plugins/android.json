@@ -6,6 +6,10 @@
   "config_munge": {
     "files": {}
   },
-  "installed_plugins": {},
+  "installed_plugins": {
+    "cordova-plugin-printer": {
+      "PACKAGE_NAME": "com.trackandeat.app"
+    }
+  },
   "dependent_plugins": {}
 }
