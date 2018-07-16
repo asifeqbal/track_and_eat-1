@@ -80,6 +80,17 @@
 				navigator.splashscreen.hide();
 				}, 2000);
 				*/
+				
+		cordova.plugins.printer.isAvailable(
+		//Check whether the printer is available or not.
+		function (isAvailable) {
+			 //Enter the page location.
+			 var page = location.href;
+			 cordova.plugins.printer.print(page, 'Document.html', function () {
+			 alert('printing finished or canceled')
+					});
+					}
+		);
 		
 		
 		
