@@ -40,4 +40,7 @@
     <feature name="Printer">
         <param name="android-package" value="de.appplant.cordova.plugin.printer.Printer" />
     </feature>
+    <feature name="QRScanner">
+        <param name="android-package" value="com.bitpay.cordova.qrscanner.QRScanner" />
+    </feature>
 </widget>
