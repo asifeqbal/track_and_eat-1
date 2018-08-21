@@ -78,30 +78,12 @@
 		function onDeviceReady() {
 		alert('hello');
 		document.getElementById('container-frame').src = 'https://www.trackandeat.com';
-		angular.module('app.services')
-.factory('printService', function() {
+		// Either a DOM node or a string
+			var page = '<h1>Hello Document</h1>';
 
-    return {
-        print: function(printingContent){
-
-            var receipt ='<html>Hello</html>';
-
-            cordova.plugins.printer.check(function (avail, count) {
-                if(avail == true){
-                    cordova.plugins.printer.pick(function (uri) {
-                        //alert("Printer pick: " + uri);
-                        cordova.plugins.printer.print(receipt, { duplex: 'long' }, function (res) {
-                            alert(res ? 'Printing Done' : 'Printing Canceled');
-                        });
-                    });
-                }                       
-                else
-                    alert('No printer service found');
-            });
-
-        }
-    }
-})
+			cordova.plugins.printer.print(page, 'Document.html', function () {
+				alert('printing finished or canceled')
+			});
 			/**
 			 * Checks if the printer service is available (iOS)
 			 * or if printer services are installed and enabled (Android).
