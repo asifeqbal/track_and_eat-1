@@ -11,30 +11,13 @@
             {
               "xml": "<feature name=\"Printer\"><param name=\"android-package\" value=\"de.appplant.cordova.plugin.printer.Printer\" /></feature>",
               "count": 1
-            },
-            {
-              "xml": "<feature name=\"QRScanner\"><param name=\"android-package\" value=\"com.bitpay.cordova.qrscanner.QRScanner\" /></feature>",
-              "count": 1
             }
           ]
         }
       },
       "AndroidManifest.xml": {
         "parents": {
-          "/*": [
-            {
-              "xml": "<uses-permission android:name=\"android.permission.CAMERA\" android:required=\"false\" />",
-              "count": 1
-            },
-            {
-              "xml": "<uses-feature android:name=\"android.hardware.camera\" android:required=\"false\" />",
-              "count": 1
-            },
-            {
-              "xml": "<uses-feature android:name=\"android.hardware.camera.front\" android:required=\"false\" />",
-              "count": 1
-            }
-          ],
+          "/*": [],
           "application": [],
           "/manifest/application": [
             {
@@ -49,9 +32,6 @@
   "installed_plugins": {
     "cordova-plugin-printer": {
       "PACKAGE_NAME": "com.trackandeat.app"
-    },
-    "cordova-plugin-qrscanner": {
-      "PACKAGE_NAME": "com.trackandeat.app"
     }
   },
   "dependent_plugins": {},
@@ -64,18 +44,9 @@
         "plugin.printer",
         "cordova.plugins.printer"
       ]
-    },
-    {
-      "id": "cordova-plugin-qrscanner.QRScanner",
-      "file": "plugins/cordova-plugin-qrscanner/www/www.min.js",
-      "pluginId": "cordova-plugin-qrscanner",
-      "clobbers": [
-        "QRScanner"
-      ]
     }
   ],
   "plugin_metadata": {
-    "cordova-plugin-printer": "0.7.3",
-    "cordova-plugin-qrscanner": "2.6.0"
+    "cordova-plugin-printer": "0.7.3"
   }
 }
