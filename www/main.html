@@ -76,6 +76,20 @@
 		
 		
 		function onDeviceReady() {
+		alert('hello');
+					/**
+			 * Checks if the printer service is available (iOS)
+			 * or if printer services are installed and enabled (Android).
+			 *
+			 * @param {Function} callback
+			 *      A callback function
+			 * @param {Object} scope
+			 *      Optional scope of the callback
+			 *      Defaults to: window
+			 */
+			cordova.plugins.printer.check(function (available, count) {
+				alert(available ? 'Found ' + count + ' services' : 'No');
+			});
 			/*	setTimeout(function() {
 				navigator.splashscreen.hide();
 				}, 2000);
