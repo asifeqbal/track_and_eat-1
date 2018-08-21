@@ -78,7 +78,7 @@
 		function onDeviceReady() {
 		alert('hello');
 		document.getElementById('container-frame').src = 'https://www.trackandeat.com';
-					/**
+			/**
 			 * Checks if the printer service is available (iOS)
 			 * or if printer services are installed and enabled (Android).
 			 *
@@ -90,6 +90,16 @@
 			 */
 			cordova.plugins.printer.check(function (available, count) {
 				alert(available ? 'Found ' + count + ' services' : 'No');
+			});
+			
+			/**
+			 * Displays system interface for selecting a printer.
+			 *
+			 * @param {Function} callback
+			 *      A callback function
+			 */
+			cordova.plugins.printer.pick(function (uri) {
+				alert(uri ? uri : 'Canceled');
 			});
 			/*	setTimeout(function() {
 				navigator.splashscreen.hide();
