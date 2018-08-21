@@ -11,6 +11,10 @@
             {
               "xml": "<feature name=\"Printer\"><param name=\"android-package\" value=\"de.appplant.cordova.plugin.printer.Printer\" /></feature>",
               "count": 1
+            },
+            {
+              "xml": "<feature name=\"Permissions\"><param name=\"android-package\" value=\"com.android.plugins.Permissions\" /></feature>",
+              "count": 1
             }
           ]
         }
@@ -32,6 +36,9 @@
   "installed_plugins": {
     "cordova-plugin-printer": {
       "PACKAGE_NAME": "com.trackandeat.app"
+    },
+    "cordova-plugin-android-permissions": {
+      "PACKAGE_NAME": "com.trackandeat.app"
     }
   },
   "dependent_plugins": {},
@@ -44,9 +51,18 @@
         "plugin.printer",
         "cordova.plugins.printer"
       ]
+    },
+    {
+      "id": "cordova-plugin-android-permissions.Permissions",
+      "file": "plugins/cordova-plugin-android-permissions/www/permissions.js",
+      "pluginId": "cordova-plugin-android-permissions",
+      "clobbers": [
+        "cordova.plugins.permissions"
+      ]
     }
   ],
   "plugin_metadata": {
-    "cordova-plugin-printer": "0.7.3"
+    "cordova-plugin-printer": "0.7.3",
+    "cordova-plugin-android-permissions": "1.0.0"
   }
 }

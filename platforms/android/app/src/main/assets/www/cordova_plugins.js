@@ -8,12 +8,21 @@ module.exports = [
       "plugin.printer",
       "cordova.plugins.printer"
     ]
+  },
+  {
+    "id": "cordova-plugin-android-permissions.Permissions",
+    "file": "plugins/cordova-plugin-android-permissions/www/permissions.js",
+    "pluginId": "cordova-plugin-android-permissions",
+    "clobbers": [
+      "cordova.plugins.permissions"
+    ]
   }
 ];
 module.exports.metadata = 
 // TOP OF METADATA
 {
-  "cordova-plugin-printer": "0.7.3"
+  "cordova-plugin-printer": "0.7.3",
+  "cordova-plugin-android-permissions": "1.0.0"
 };
 // BOTTOM OF METADATA
 });

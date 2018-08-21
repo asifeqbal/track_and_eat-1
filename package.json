@@ -7,6 +7,7 @@
     "displayName": "Track And Eat",
     "dependencies": {
         "cordova-android": "^7.0.0",
+        "cordova-plugin-android-permissions": "^1.0.0",
         "cordova-plugin-compat": "^1.2.0",
         "cordova-plugin-network-information": "^2.0.1",
         "cordova-plugin-printer": "^0.7.3",
@@ -18,7 +19,8 @@
             "cordova-plugin-splashscreen": {},
             "cordova-plugin-network-information": {},
             "cordova-plugin-whitelist": {},
-            "cordova-plugin-printer": {}
+            "cordova-plugin-printer": {},
+            "cordova-plugin-android-permissions": {}
         }
     }
 }

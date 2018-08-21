@@ -9,6 +9,9 @@
   "installed_plugins": {
     "cordova-plugin-printer": {
       "PACKAGE_NAME": "com.trackandeat.app"
+    },
+    "cordova-plugin-android-permissions": {
+      "PACKAGE_NAME": "com.trackandeat.app"
     }
   },
   "dependent_plugins": {}
