@@ -62,6 +62,9 @@
 	
 		document.getElementById('offline-screen').style.height = document.body.clientHeight+'px';
         document.addEventListener("deviceready", onDeviceReady, false);
+		// Initialize local vars
+			var deviceId;
+		
 		
 		function loaded(){
 			document.getElementById('blanker').style.display = 'none';
@@ -88,7 +91,32 @@
 		function onDeviceReady() {
 			alert('hello');	
 			
-			document.cookie=document.cookie+'isAndroid=1';
+			alert('id:' +  deviceId );
+			document.getElementById('container-frame').src = 'https://www.trackandeat.com/index.php?devType=Android&deviceId='+deviceId;
+			
+			var push = PushNotification.init({ "android": {"senderID": "460557973166"},
+					"ios": {"alert": "true", "badge": "true", "sound": "true"}, "windows": {} } );
+					push.on('registration', function(data) {
+						deviceId = data.registrationId;
+					//	document.getElementById('container-frame').src = 'https://www.trackandeat.com/index.php?devType=Android&deviceId='+deviceId;
+						document.getElementById('container-frame').src = 'http://typo3.vrisini.com/fabdyl';
+					//	alert('id:' +  deviceId );	
+										
+					}); 
+					
+					push.on('error', function(e) {
+						notificationFlag = false;
+						document.getElementById('container-frame').src = 'http://typo3.vrisini.com/fabdyl';
+						
+					}); 
+					push.on('notification', function(data) {
+						navigator.notification.alert(
+							data.message,         // message
+							null,                 // callback
+							data.title,           // title
+							'Ok'                  // buttonName
+						);			
+					});
 			
 					// Blanker on change
 					document.addEventListener("online", doWhenOnline, false);

@@ -12,6 +12,10 @@
     },
     "cordova-plugin-android-permissions": {
       "PACKAGE_NAME": "com.trackandeat.app"
+    },
+    "phonegap-plugin-push": {
+      "SENDER_ID": "XXXXXXX",
+      "PACKAGE_NAME": "com.trackandeat.app"
     }
   },
   "dependent_plugins": {}
