@@ -40,7 +40,7 @@
 	<style>
 		html, body{width:100%; height:100%;}
 		body{margin:0; padding:0;}
-		#blanker{width:100%; height:100%; left:0; top:0; background:url('loader.gif') no-repeat center center; display:block; z-index:1000; position:absolute;}
+		#blanker{width:100%; height:100%; left:0; top:0; background:url('loader1.gif') no-repeat center center; display:block; z-index:1000; position:absolute;}
 		#offline-screen{width:100%; height:100%; background:url('connectionlost.png') no-repeat center center; background-color: #00001c; background-size:contain; display:none; z-index:9999; position:fixed; top:0; left:0;}
 	</style>
     
@@ -48,9 +48,12 @@
 
 <body>	
 	<div id="blanker"></div>
-	<div id="isApp"></div>
+	<div id="isAndroid"></div>
 	<div id="offline-screen"></div>
 	<div class="social-button-facebook button_inline" onclick="browse();"></div>
+	<div class="overlay">
+		<div id="wait"><img src='loader.gif' width="64" height="64" /><br>Loading..</div>
+	</div>
 	
 	<iframe src="https://www.trackandeat.com" name="container-frame" id="container-frame" onload="loaded();" seamless="seamless" width="100%" height="100%" style="border:none; position:absolute;"></iframe>
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
