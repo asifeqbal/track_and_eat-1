@@ -74,6 +74,11 @@
 				case 'removeLoader':
 					document.getElementById('loader').style.display = 'none'; 
 					break;
+				case 'ptintThings':
+					cordova.plugins.printer.print('some content, 'Document.html', function () {
+						alert('printing finished or canceled');
+					});
+					break;
 			}
 		};
 		window.addEventListener("message", receiveMessage, false);		
