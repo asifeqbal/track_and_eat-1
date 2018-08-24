@@ -86,7 +86,9 @@
 		
 		
 		function onDeviceReady() {
-			alert('hello');		
+			alert('hello');	
+			
+			document.cookie=document.cookie+'isAndroid=1';
 			
 					// Blanker on change
 					document.addEventListener("online", doWhenOnline, false);
