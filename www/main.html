@@ -67,7 +67,8 @@
 			document.getElementById('loader').style.display = 'none';
 		}
 		var receiveMessage = function receiveMessage(e){
-			switch (e.data) {
+			var args = e.data;
+			switch (args.task) {
 				case 'showLoader':
 					document.getElementById('loader').style.display = 'block';
 					break;
@@ -75,7 +76,7 @@
 					document.getElementById('loader').style.display = 'none'; 
 					break;
 				case 'ptintThings':
-					cordova.plugins.printer.print('some content', 'Document.html', function () {
+					cordova.plugins.printer.print(args.contents, 'Document.html', function () {
 						alert('printing finished or canceled')
 					});
 					break;
