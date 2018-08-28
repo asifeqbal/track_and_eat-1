@@ -12,6 +12,9 @@
     },
     "cordova-plugin-android-permissions": {
       "PACKAGE_NAME": "com.trackandeat.app"
+    },
+    "cordova-plugin-barcodescanner": {
+      "PACKAGE_NAME": "com.trackandeat.app"
     }
   },
   "dependent_plugins": {}

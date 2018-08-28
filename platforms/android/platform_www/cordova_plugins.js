@@ -18,11 +18,11 @@ module.exports = [
     ]
   },
   {
-    "id": "phonegap-plugin-push.PushNotification",
-    "file": "plugins/phonegap-plugin-push/www/push.js",
-    "pluginId": "phonegap-plugin-push",
+    "id": "cordova-plugin-barcodescanner.BarcodeScanner",
+    "file": "plugins/cordova-plugin-barcodescanner/www/barcodescanner.js",
+    "pluginId": "cordova-plugin-barcodescanner",
     "clobbers": [
-      "PushNotification"
+      "cordova.plugins.barcodeScanner"
     ]
   }
 ];
@@ -31,7 +31,7 @@ module.exports.metadata =
 {
   "cordova-plugin-printer": "0.7.3",
   "cordova-plugin-android-permissions": "1.0.0",
-  "phonegap-plugin-push": "1.8.4"
+  "cordova-plugin-barcodescanner": "0.7.4"
 };
 // BOTTOM OF METADATA
 });
