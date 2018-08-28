@@ -83,6 +83,24 @@
 						alert('printing finished or canceled')
 					});
 					break;
+				case 'qrScanner':
+				function cameraTakePicture() { 
+					navigator.camera.getPicture(onSuccess, onFail, {  
+						  quality: 50, 
+						  destinationType: Camera.DestinationType.DATA_URL 
+					   });  
+					   
+					   function onSuccess(imageData) { 
+					   alert('sucess');
+						  var image = document.getElementById('myImage'); 
+						  image.src = "data:image/jpeg;base64," + imageData; 
+					   }  
+					   
+					   function onFail(message) { 
+						  alert('Failed because: ' + message); 
+					   } 
+					}					   
+					break;
 			}
 		};
 		window.addEventListener("message", receiveMessage, false);		
