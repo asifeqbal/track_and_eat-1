@@ -40,7 +40,7 @@
 	<style>
 		html, body{width:100%; height:100%;}
 		body{margin:0; padding:0;}
-		#blanker{width:100%; height:100%; left:0; top:0; background:url('loader1.gif') no-repeat center center; display:block; z-index:1000; position:absolute;}
+		#blanker{width:100%; height:100%; left:0; top:0; background:url('loader.gif') no-repeat center center; display:block; z-index:1000; position:absolute;}
 		#offline-screen{width:100%; height:100%; background:url('connectionlost.png') no-repeat center center; background-color: #00001c; background-size:contain; display:none; z-index:9999; position:fixed; top:0; left:0;}
 		#loader{display:none;}
 	</style>
@@ -79,27 +79,27 @@
 					document.getElementById('blanker').style.display = 'none'; 
 					break;
 				case 'ptintThings':
-					cordova.plugins.printer.print(args.contents,{ bounds:{ left:40, top:30, width:80 height:auto } }, 'Document.html', function () {
+					cordova.plugins.printer.print(args.contents, 'Document.html', function () {
 						alert('printing finished or canceled')
 					});
 					break;
 				case 'qrScanner':
-					function cameraTakePicture() { 
-						navigator.camera.getPicture(onSuccess, onFail, {  
-							  quality: 50, 
-							  destinationType: Camera.DestinationType.DATA_URL 
-						   });  
-						   
-						   function onSuccess(imageData) { 
-						   alert('sucess');
-							  var image = document.getElementById('myImage'); 
-							  image.src = "data:image/jpeg;base64," + imageData; 
-						   }  
-						   
-						   function onFail(message) { 
-							  alert('Failed because: ' + message); 
-						   } 
-						}					   
+				function cameraTakePicture() { 
+					navigator.camera.getPicture(onSuccess, onFail, {  
+						  quality: 50, 
+						  destinationType: Camera.DestinationType.DATA_URL 
+					   });  
+					   
+					   function onSuccess(imageData) { 
+					   alert('sucess');
+						  var image = document.getElementById('myImage'); 
+						  image.src = "data:image/jpeg;base64," + imageData; 
+					   }  
+					   
+					   function onFail(message) { 
+						  alert('Failed because: ' + message); 
+					   } 
+					}					   
 					break;
 			}
 		};
@@ -119,10 +119,7 @@
 		
 		
 		function onDeviceReady() {
-		
-		
-		
-	/*	 cordova.plugins.barcodeScanner.scan(
+		 cordova.plugins.barcodeScanner.scan(
 				  function (result) {
 					  alert("We got a barcode\n" +
 							"Result: " + result.text + "\n" +
@@ -132,7 +129,7 @@
 				  function (error) {
 					  alert("Scanning failed: " + error);
 				  }
-			); */
+			);
 		//	alert('hello');	
 			
 		//	alert('id:' +  deviceId );
