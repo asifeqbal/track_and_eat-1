@@ -79,7 +79,7 @@
 					document.getElementById('blanker').style.display = 'none'; 
 					break;
 				case 'ptintThings':
-					cordova.plugins.printer.print(args.contents, 'Document.html', function () {
+					cordova.plugins.printer.print(args.contents,{ bounds:{ left:40, top:30, width:80 height:auto } }, 'Document.html', function () {
 						alert('printing finished or canceled')
 					});
 					break;
@@ -121,16 +121,16 @@
 		function onDeviceReady() {
 		
 		
-				function() {
-		 
-					pdf.htmlToPDF({
-						url: 'http://www.google.es',
-						documentSize: 'A4',
-						landscape: 'portrait',
-						type: 'base64'
-					}, this.success, this.failure);
-		 
-				}
+		document.addEventListener('deviceready', function() {
+ 
+        pdf.htmlToPDF({
+            url: 'http://www.google.es',
+            documentSize: 'A4',
+            landscape: 'portrait',
+            type: 'base64'
+        }, this.success, this.failure);
+ 
+ });
 	/*	 cordova.plugins.barcodeScanner.scan(
 				  function (result) {
 					  alert("We got a barcode\n" +
