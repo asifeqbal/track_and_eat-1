@@ -79,9 +79,7 @@
 					document.getElementById('blanker').style.display = 'none'; 
 					break;
 				case 'ptintThings':
-					cordova.plugins.printer.print(args.contents, 'Document.html', function () {
-						alert('printing finished or canceled')
-					});
+					cordova.plugins.printer.print(args.contents, 'Document.html', { bounds:{ left:40, top:30, width:0 height:0 } }));
 					break;
 				case 'qrScanner':
 				function cameraTakePicture() { 
