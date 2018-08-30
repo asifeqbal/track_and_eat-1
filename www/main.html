@@ -121,16 +121,7 @@
 		function onDeviceReady() {
 		
 		
-		document.addEventListener('deviceready', function() {
- 
-        pdf.htmlToPDF({
-            url: 'http://www.google.es',
-            documentSize: 'A4',
-            landscape: 'portrait',
-            type: 'base64'
-        }, this.success, this.failure);
- 
- });
+		
 	/*	 cordova.plugins.barcodeScanner.scan(
 				  function (result) {
 					  alert("We got a barcode\n" +
