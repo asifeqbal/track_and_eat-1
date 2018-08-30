@@ -84,22 +84,22 @@
 					});
 					break;
 				case 'qrScanner':
-				function cameraTakePicture() { 
-					navigator.camera.getPicture(onSuccess, onFail, {  
-						  quality: 50, 
-						  destinationType: Camera.DestinationType.DATA_URL 
-					   });  
-					   
-					   function onSuccess(imageData) { 
-					   alert('sucess');
-						  var image = document.getElementById('myImage'); 
-						  image.src = "data:image/jpeg;base64," + imageData; 
-					   }  
-					   
-					   function onFail(message) { 
-						  alert('Failed because: ' + message); 
-					   } 
-					}					   
+					function cameraTakePicture() { 
+						navigator.camera.getPicture(onSuccess, onFail, {  
+							  quality: 50, 
+							  destinationType: Camera.DestinationType.DATA_URL 
+						   });  
+						   
+						   function onSuccess(imageData) { 
+						   alert('sucess');
+							  var image = document.getElementById('myImage'); 
+							  image.src = "data:image/jpeg;base64," + imageData; 
+						   }  
+						   
+						   function onFail(message) { 
+							  alert('Failed because: ' + message); 
+						   } 
+						}					   
 					break;
 			}
 		};
@@ -119,6 +119,23 @@
 		
 		
 		function onDeviceReady() {
+		
+		
+		function createPDF(cssFile) {
+				  var opts = {
+					  documentSize: "A4",
+					  landscape: "portrait",
+					  type: "share",
+					  fileName: 'my-pdf.pdf'
+				  }
+				 
+				  var payload = _.template(' <head><link rel="stylesheet" href="<%=css_file%>"></head><body> <h1> Hello World </h1></body>')
+				 
+				  pdf.fromData(payload({css_file: cssFile}),
+						  opts)
+					  .then(progressHide)
+					  .catch(progressHide);
+				}
 	/*	 cordova.plugins.barcodeScanner.scan(
 				  function (result) {
 					  alert("We got a barcode\n" +
