@@ -40,7 +40,7 @@
 	<style>
 		html, body{width:100%; height:100%;}
 		body{margin:0; padding:0;}
-		#blanker{width:100%; height:100%; left:0; top:0; background:url('loader.gif') no-repeat center center; display:block; z-index:1000; position:absolute;}
+		#blanker{background-image:url('loader.gif'); background-repeat:no-repeat; background-position: center center; display:block; z-index:9998; background-size:50px; position:fixed; top:0;left:0; height:100%; width:100%; background-color:transparent;}
 		#offline-screen{width:100%; height:100%; background:url('connectionlost.png') no-repeat center center; background-color: #00001c; background-size:contain; display:none; z-index:9999; position:fixed; top:0; left:0;}
 		#loader{display:none;}
 	</style>
@@ -51,10 +51,7 @@
 	<div id="blanker"></div>
 	<div id="isAndroid"></div>
 	<div id="offline-screen"></div>
-	<div class="social-button-facebook button_inline" onclick="browse();"></div>
-	<div id="loader">
-		<!--<div id="wait"><img src='loader.gif' width="64" height="64" /><br>Loading..</div>-->
-	</div>	
+	<div class="social-button-facebook button_inline" onclick="browse();"></div>	
 	<iframe src="https://www.trackandeat.com/index.php?devType=Android" name="container-frame" id="container-frame" onload="loaded();" seamless="seamless" width="100%" height="100%" style="border:none; position:absolute;"></iframe>
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     <script type="text/javascript" charset="utf-8" src="js/index.js"></script>
@@ -79,43 +76,26 @@
 					document.getElementById('blanker').style.display = 'none'; 
 					break;
 				case 'ptintThings':
-					cordova.plugins.printer.print(args.contents,{ name:'Document.html', landscape:true } ,function () {
+					cordova.plugins.printer.print(args.contents, 'Document.html', function () {
 						alert('printing finished or canceled')
 					});
 					break;
 				case 'qrScanner':
-				function cameraTakePicture() { 
-					navigator.camera.getPicture(onSuccess, onFail, {  
-						  quality: 50, 
-						  destinationType: Camera.DestinationType.DATA_URL 
-					   });  
-					   
-					   function onSuccess(imageData) { 
-					   alert('sucess');
-						  var image = document.getElementById('myImage'); 
-						  image.src = "data:image/jpeg;base64," + imageData; 
-					   }  
-					   
-					   function onFail(message) { 
-						  alert('Failed because: ' + message); 
-					   } 
-					}					   
+					cordova.plugins.barcodeScanner.scan(result, error );
+							function result(){
+									  alert("We got a barcode\n" +
+											"Result: " + result.text + "\n" +
+											"Format: " + result.format + "\n" +
+											"Cancelled: " + result.cancelled);
+								  }
+							function error() {
+								  alert("Scanning failed: " + error);
+							  }							   
 					break;
 			}
 		};
 		window.addEventListener("message", receiveMessage, false);
-
-
-						 cordova.plugins.barcodeScanner.scan(result, error );
-								function result(){
-										  alert("We got a barcode\n" +
-												"Result: " + result.text + "\n" +
-												"Format: " + result.format + "\n" +
-												"Cancelled: " + result.cancelled);
-									  }
-								function error() {
-									  alert("Scanning failed: " + error);
-								  }						 
+				 
 		
 		
 		function onDeviceReady() {
