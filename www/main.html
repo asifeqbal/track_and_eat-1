@@ -99,13 +99,23 @@
 		
 		
 		function onDeviceReady() {
+		cordova.plugins.barcodeScanner.scan(result, error );
+							function result(){
+									  alert("We got a barcode\n" +
+											"Result: " + result.text + "\n" +
+											"Format: " + result.format + "\n" +
+											"Cancelled: " + result.cancelled);
+								  }
+							function error() {
+								  alert("Scanning failed: " + error);
+							  }	
 		 cordova.plugins.barcodeScanner.encode(BarcodeScanner.Encode.TEXT_TYPE, "http://www.nytimes.com", function(success) {
             alert("encode success: " + success);
           }, function(fail) {
             alert("encoding failed: " + fail);
           }
         );
-		//	alert('hello');	
+			alert('hello');	
 			
 		//	alert('id:' +  deviceId );
 			document.getElementById('container-frame').src = 'https://www.trackandeat.com/index.php?devType=Android&deviceId='+deviceId;
